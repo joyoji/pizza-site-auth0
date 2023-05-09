@@ -1,55 +1,20 @@
-# Sample 02 - Calling an API
+This sample React SPA (Single-page app) is to demonstrate Auth0 implementation and capabilities in light of Pizza 42's requirements. This sample is based on the [Auth0 React SPA Quickstart](https://auth0.com/docs/quickstart/spa/react).
 
-This app demonstrates how to log in using the Auth0 Universal Page, and call a backend API using an access token.
+## Setup
+1. Clone this repository
+2. [Register a Single Page App](https://auth0.com/docs/applications/set-up-an-application/register-single-page-app) in Auth0
+3. Rename the `auth_config.sample.json` file to `auth_config.json` and replace all placeholder values with the appropriate values from your Auth0 tenant.
+        - `domain`: Your Auth0 tenant domain
+        - `clientId`: `client_id` from step (2)
+        - `audience`: API audience from configuring the [Pizza 42 API](https://github.com/joyoji/pizza-site-auth0).
+        -  `scope`: Permission from configuring the [Pizza 42 API](https://github.com/joyoji/pizza-site-auth0).
+5. `npm install  `
+6. `npm start`
 
-## Installation
+## Functionality
 
-After cloning the repository, run:
-
-```bash
-$ npm install
-```
-
-This will install all of the necessary packages in order for the sample to run.
-
-## Running the Application
-
-To start the app from the terminal, run:
-
-```bash
-$ npm run dev
-```
-
-Open the application in the browser at [http://localhost:3000](http://localhost:3000).
-
-## Frequently Asked Questions
-
-We are compiling a list of questions and answers regarding the new JavaScript SDK - if you're having issues running the sample applications, [check the FAQ](https://github.com/auth0/auth0-spa-js/blob/master/FAQ.md)!
-
-## What is Auth0?
-
-Auth0 helps you to:
-
-- Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, among others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
-- Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
-- Add support for **[linking different user accounts](https://docs.auth0.com/link-accounts)** with the same user.
-- Support for generating signed [Json Web Tokens](https://docs.auth0.com/jwt) to call your APIs and **flow the user identity** securely.
-- Analytics of how, when and where users are logging in.
-- Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.auth0.com/rules).
-
-## Create a free Auth0 account
-
-1. Go to [Auth0](https://auth0.com/signup) and click Sign Up.
-2. Use Google, GitHub or Microsoft Account to login.
-
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
-
-## Author
-
-[Auth0](auth0.com)
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](LICENSE.txt) file for more info.
+1. Integration with Auth0 using the [auth0-spa-js SDK](https://auth0.com/docs/libraries/auth0-single-page-app-sdk) for authentication.
+2. Ability for users to sign up, password reset, as well as login using social providers (Google, Facebook).
+3. Enriched customer data with customer's previous order history for a more personalised experience. Previous order history added to the ID token issued to the application using [Auth0 Rules](https://auth0.com/docs/rules).
+4. Restricting ordering for unverified email addresses, while still allowing users to login to the application.
+5. Requesting specific scopes during authentication flow in order to call the protected API endpoints.
